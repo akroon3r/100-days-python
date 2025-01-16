@@ -1,35 +1,47 @@
 # This is a sample Python script.
-
+import random
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print("Welcome to Python Pizza Deliveries!")
-    size = input("What size pizza do you want? S, M or L: ")
-    pepperoni = input("Do you want pepperoni on your pizza? Y or N: ")
-    cheese = input ("Do you want extra cheese? Y or N: ")
+    choice = int(input("What do you choose? Type 0 for rock, 1 for paper, 2 for scissors\n"))
+    if choice == 0:
+        print("You chose rock")
+    elif choice == 1:
+        print("You chose paper")
+    elif choice == 2:
+        print("You chose scissors")
 
-    bill = 0
-    # todo work out how much they need to pay based on their size choice
+    computer_choice = random.randint(0,2)
+    if computer_choice == 0:
+        print("Computer chose rock")
+    elif computer_choice == 1:
+        print("Computer chose paper")
+    elif computer_choice == 2:
+        print("Computer chose scissors")
 
-    if size == "S":
-        bill += 15
-    elif size == "M":
-        bill += 20
-    elif size == "L":
-        bill += 25
-    # todo work out how much to add to their bill based on their pepperoni choice
+    # if you choose rock
+    if choice == 0 and computer_choice == 1:
+        print("You lose!")
+    elif choice == 0 and computer_choice == 2:
+        print("You win!")
+    elif choice == 0 and computer_choice == 0:
+        print("DRAW!")
 
-    if pepperoni == "Y" and size == "S":
-        bill += 2
-    elif pepperoni == "Y" and size == "M" or size == "L":
-        bill += 3
-    # todo work out their final amount based on whether if they want extra cheese
+    if choice == 1 and computer_choice == 0:
+        print("You win!")
+    elif choice == 1 and computer_choice == 2:
+        print("You lose!")
+    elif choice == 1 and computer_choice == 1:
+        print("DRAW!")
 
-    if cheese == "Y":
-        bill += 1
+    if choice == 2 and computer_choice == 0:
+        print("You lose!")
+    elif choice == 2 and computer_choice == 1:
+        print("You win!")
+    elif choice == 2 and computer_choice == 2:
+        print("DRAW!")
 
-    print(f"Your final bill is: ${bill}")
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
