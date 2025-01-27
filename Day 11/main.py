@@ -77,6 +77,7 @@ if __name__ == '__main__':
         if players_current_score <= 21 and dealers_current_score <= 21:
             game_over = who_wins(players_current_score = players_current_score, dealers_current_score = dealers_current_score)
         start_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
+        
     else:
         print("Thanks for playing!")
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
