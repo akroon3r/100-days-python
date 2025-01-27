@@ -1,6 +1,6 @@
 # This is a sample Python script.
 from math_functions import add, subtract, multiply, divide
-from cards import initialize_hands, hit, sum_of_hand, ace_is_one
+from cards import initialize_hands, hit, sum_of_hand, ace_is_one, who_wins
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 from cipher import encrypt, decrypt, caesar
@@ -69,19 +69,13 @@ if __name__ == '__main__':
                 print(f"The dealer's new score is {dealers_current_score}")
             # If the dealer hits and their score is greater than 21, the game is over
             elif dealers_current_score > 21:
+                print(f"The dealer has a score of {dealers_current_score}")
                 print("The dealer has busted! Game over, You win!")
                 game_over = True
         # After both the player and deal have finished adding cards to their hand and neither has busted
         # Check scores to see if the player has won, lost or tied against the dealer
-        if players_current_score > dealers_current_score and players_current_score <= 21 and game_over == False:
-            print(f"You've beaten the dealer with a score of {players_current_score}! Congratulations!")
-            game_over = True
-        elif players_current_score == dealers_current_score and players_current_score <= 21 and game_over == False:
-            print(f"Draw! You've tied the score with the dealer")
-            game_over = True
-        elif players_current_score < dealers_current_score and game_over == False:
-            game_over = True
-            print(f"You've lost to the dealers score of {dealers_current_score}")
+        if players_current_score <= 21 and dealers_current_score <= 21:
+            game_over = who_wins(players_current_score = players_current_score, dealers_current_score = dealers_current_score)
         start_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n'").lower()
     else:
         print("Thanks for playing!")

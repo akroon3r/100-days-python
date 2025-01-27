@@ -32,3 +32,14 @@ def ace_is_one(hand):
     position_of_eleven = hand.index(11)
     hand[position_of_eleven] = 1
     return hand
+
+def who_wins(players_current_score, dealers_current_score):
+    if players_current_score > dealers_current_score:
+        print(f"You've beaten the dealer with a score of {players_current_score}! Congratulations!")
+        return True
+    elif players_current_score == dealers_current_score:
+        print(f"Draw! You've tied the score with the dealer")
+        return True
+    else:
+        print(f"You've lost to the dealers score of {dealers_current_score}")
+        return True
