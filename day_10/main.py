@@ -3,8 +3,7 @@ from math_functions import add, subtract, multiply, divide
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-from cipher import encrypt, decrypt, caesar
-from bid import add_bidder, compute_winner
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # TODO add 4 functions from math_functions into a dict, keys being their math operators
